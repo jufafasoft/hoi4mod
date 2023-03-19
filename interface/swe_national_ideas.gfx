@@ -1,0 +1,16 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_idea_swe_king_gustav_v_popular_country_idea"
+		texturefile = "gfx/interface/ideas/idea_king_gustav_v_ns.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_swe_king_gustav_v_hate_country_idea"
+		texturefile = "gfx/interface/ideas/idea_king_gustav_v_ns_hate.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_swe_king_gustav_v_fascism_country_idea"
+		texturefile = "gfx/interface/ideas/idea_king_gustav_v_ns.dds"
+	}
+}

@@ -1,0 +1,9 @@
+bss_unified= {
+	color = rgb { 127 185 191 }
+	color_ui = rgb { 127 185 191 }
+}
+
+nse_unified= {
+	color = rgb { 255 255 255 }
+	color_ui = rgb { 255 255 255 }
+}

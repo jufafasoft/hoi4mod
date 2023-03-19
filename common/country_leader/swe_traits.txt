@@ -1,0 +1,194 @@
+
+leader_traits = {
+
+	swe_cabinet_crisis = { #붕괴된 정부
+		random = no
+		stability_factor = -0.3
+		party_popularity_stability_factor = -0.3
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_summer_goverment = { # 휴가 정부
+		random = no
+		stability_factor = 0.2
+		production_speed_industrial_complex_factor = 0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_temp_bondeforbundet_leader = { #농민연합 지도자1
+		random = no
+		neutrality_drift = 0.01
+		stability_factor = 0.1
+		party_popularity_stability_factor = 0.2
+		production_speed_infrastructure_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_temp_bondeforbundet_leader2 = { #농민연합 지도자2
+		random = no
+		neutrality_drift = 0.02
+		stability_factor = -0.1
+		party_popularity_stability_factor = -0.2
+		production_speed_infrastructure_factor = 0.2
+		production_speed_industrial_complex_factor = 0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_temp_fascism_leader = { #파시즘 지도자
+		random = no
+		fascism_drift = 0.02
+		war_support_factor = 0.1
+		party_popularity_stability_factor = 0.2
+		production_speed_arms_factory_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_temp_commuism_leader = { #공산주의 지도자
+		random = no
+		communism_drift = 0.02
+		war_support_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swe_bondeforbundet_leader = { #농민연합 지도자
+		random = no
+		production_speed_infrastructure_factor = 0.2
+		production_speed_industrial_complex_factor = 0.2
+	}
+
+	swe_temp_kingdom_leader = {
+		random = No
+		stability_factor = 0.2
+		command_power_gain_mult = 0.05
+	}
+
+	swe_king_gustav_v_popular_trait = { #왕 트레잇1(안정도 + 정당지지도)
+		random = no
+
+		stability_factor = 0.2
+		neutrality_drift = 0.01
+		command_power_gain_mult = 0.1
+	}
+
+	swe_king_gustav_v_popular_trait2 = { #왕 트레잇1_2(안정도 + 정당지지도)
+		random = no
+
+		stability_factor = 0.2
+		neutrality_drift = 0.01
+		command_power_gain_mult = 0.1
+		political_power_gain = 0.10
+	}
+
+	swe_king_gustav_v_popular_trait3 = { #왕 트레잇1_3(안정도 + 정당지지도)
+		random = no
+
+		stability_factor = 0.2
+		neutrality_drift = 0.02
+		war_support_factor = 0.2
+		command_power_gain_mult = 0.1
+		political_power_gain = 0.10
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.15
+	}
+
+	swe_king_gustav_v_anti_communist_trait = { #왕 트레잇2(공산주의 반대)
+		random = no
+
+		communism_acceptance = -50
+		communism_drift = -0.01
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+	}
+
+	swe_king_gustav_v_like_fascist_sympathies_trait = { #왕 트레잇3(독일에 대한 호의)
+		random = no
+
+		fascism_acceptance = 20
+	}
+
+	swe_unity_government_trait = { #거국내각
+		random = no
+		production_speed_infrastructure_factor = 0.2
+		production_speed_industrial_complex_factor = 0.2
+	}
+
+	swe_party_balancer = { #당내의 균형자
+		random = no
+		war_support_factor = 0.1
+		stability_factor = 0.1
+	}
+
+	sweden_comintern_effect = { #코민테른에서의 영향력
+		random = no
+		monthly_population = 0.30
+	}
+
+	swe_anti_fascist_leader = {
+		random = no
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+	}
+
+	swe_activism_trait = { #스웨덴 행동주의자
+		random = no
+		war_support_factor = 0.1
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+	}
+
+	swe_destroyer_effort_trait = {
+		random = no
+		sprite = 3
+		equipment_bonus = {
+			ship_hull_light = {
+				build_cost_ic = -0.05
+			}
+		}
+	}
+
+	swe_submarine_ship_effort_trait = {
+		random = no
+		sprite = 4
+		equipment_bonus = {
+			submarine = {
+				build_cost_ic = -0.05
+			}
+		}
+	}
+
+	swe_bondeforbundet_leader_trait = {
+		random = no
+		sprite = 10
+		production_speed_infrastructure_factor = 0.2
+		production_speed_industrial_complex_factor = 0.2		
+	}
+}

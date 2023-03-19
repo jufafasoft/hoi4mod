@@ -1,0 +1,96 @@
+spriteTypes = {
+	spriteType = {
+		name = GFX_portrait_SWE_gustav_v
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_gustav_v.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_torsten_nothin
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_torsten_nothin.dds"
+	}
+
+    spriteType = {
+		name = GFX_portrait_SWE_sven_olov_lindholm
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_sven_olov_lindholm.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_sven_linderot
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_sven_linderot.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_axel_pehrssonbramstorp
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_axel_pehrssonbramstorp.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_SWE_axel_pehrssonbramstorp
+		texturefile = "gfx/interface/ideas/idea_Sweden_axel_pehrssonbramstorp.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_folke_hogberg
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_folke_hogberg.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_folke_hogberg_small
+		texturefile = "gfx/interface/ideas/idea_Sweden_folke_hogberg.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_erik_af_edholm
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_erik_af_edholm.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_erik_af_edholm_small
+		texturefile = "gfx/interface/ideas/idea_Sweden_erik_af_edholm.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_claes_lindstrom
+		texturefile = "gfx/leaders/SWE/Portrait_Sweden_claes_lindstrom.dds"
+	}
+
+	spriteType = {
+		name = GFX_portrait_SWE_claes_lindstrom_small
+		texturefile = "gfx/interface/ideas/idea_Sweden_claes_lindstrom.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_gosta_ehrensvard
+		texturefile = "gfx/interface/ideas/idea_Sweden_gosta_ehrensvard.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_gerda_linderot
+		texturefile = "gfx/interface/ideas/idea_Sweden_gerda_linderot.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_archibald_douglas
+		texturefile = "gfx/interface/ideas/idea_Sweden_archibald_douglas.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_olof_thornell
+		texturefile = "gfx/interface/ideas/idea_Sweden_olof_thornell.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_axel_ljungdahl
+		texturefile = "gfx/interface/ideas/idea_Sweden_axel_ljungdahl.dds"
+	}
+	
+	spriteType = {
+		name = GFX_idea_Sweden_osten_unden
+		texturefile = "gfx/interface/ideas/idea_Sweden_osten_unden.dds"
+	}
+
+	spriteType = {
+		name = GFX_idea_Sweden_charles_de_champs
+		texturefile = "gfx/interface/ideas/idea_Sweden_charles_de_champs.dds"
+	}
+}

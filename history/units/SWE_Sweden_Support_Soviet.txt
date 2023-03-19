@@ -1,0 +1,36 @@
+division_template = {
+	name = "Arméfördelning"			# Infantry Division - Planned formation for mobilization of divisions, 1937-1940
+	division_names_group = SWE_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Regiment of 155mm howitzers, 105mm arty
+		engineer = { x = 0 y = 1 }   
+		recon = { x = 0 y = 2 }      # Recon consisted of ACs, motorcycle inf, cavalry
+	}
+}
+
+units = {
+	division = {
+		name = "1. Arméfördelningen"
+		location = 35
+		division_template = "Arméfördelning"
+	}
+	division = {
+		name = "2. Arméfördelningen"
+		location = 3106
+		division_template = "Arméfördelning"
+	}
+	division = {
+		name = "3. Arméfördelningen"
+		location = 6127
+		division_template = "Arméfördelning"
+	}
+}

@@ -1,0 +1,821 @@
+###########################
+# SWEDEN Events
+###########################
+
+add_namespace = sweden
+
+# 한손 내각 총사퇴
+country_event = {
+	id = sweden.1
+	title = sweden.1.t
+	desc = sweden.1.d
+
+    picture = GFX_report_event_hanson_out
+
+    fire_only_once = yes
+	
+	trigger = {
+        tag = SWE
+		has_start_date < 1936.09.01
+    }
+	
+	option = {
+		name = sweden.1.a
+
+        create_country_leader = {
+			name = "붕괴한 내각"
+			desc = "POLITICS_FALLEN_GOVERNMENT_DESC"
+			picture = GFX_portrait_Fallen_Government
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				swe_cabinet_crisis
+			}
+		}
+		custom_effect_tooltip = sweden_event.1_tt
+        set_country_flag = SWE.preparing_election
+		hidden_effect = {
+			random_list = {
+				20 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = no
+					}
+					set_country_flag = SWE_deomcratic_history #민주 - 역사
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+					set_country_flag = SWE_deomcratic_non_history #민주 - 비역사
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+					set_country_flag = SWE_communism_non_history #공산
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+					set_country_flag = SWE_fascism_non_history #파시
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						is_historical_focus_on = yes
+					}
+					set_country_flag = SWE_kingdom_non_history #비동맹
+				}
+			}
+		}
+	}
+}
+
+#선거 중점 아예 안찍은채로 3월 20일 맞이함
+country_event = {
+	id = sweden.3
+	title = sweden.3.t
+	desc = sweden.3.d
+
+	picture = GFX_report_gustav_v_speech
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		has_start_date < 1936.09.01
+		date > 1936.03.20
+		OR = {
+			NOT = {
+				has_completed_focus = swe_axel_goverment
+				has_completed_focus = swe_restruct_goverment
+			}
+			NOT = {
+				has_completed_focus = swe_axel_goverment
+				has_completed_focus = swe_facism_goverment_prepare
+				has_completed_focus = swe_communist_goverment_prepare
+				has_completed_focus = swe_kingdom_prepare
+			}
+		}
+	}
+
+	option = {
+		name = sweden.3.a
+		clr_country_flag = SWE.preparing_election
+		set_country_flag = SWE.kingdom_flag
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_restruct_goverment
+				}
+			}
+			unlock_national_focus = swe_restruct_goverment
+			add_stability = -0.30
+		}
+	}
+}
+
+#선거 중점 일부만 찍고 9월 맞이함 - 민주
+country_event = {
+	id = sweden.4
+	title = sweden.4.t
+	desc = sweden.4.d
+
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date < 1936.09.1
+		date > 1936.08.20
+		has_completed_focus = swe_axel_goverment
+		NOT = {
+			has_completed_focus = swe_election_focus
+		}
+	}
+
+	option = {
+		name = sweden.4.a
+		clr_country_flag = SWE.preparing_election
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_vacation_goverment_focus
+					has_completed_focus = swe_bondeforbundet_goverment_focus
+				}
+			}
+			unlock_national_focus = swe_vacation_goverment_focus
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_rural_reconstruction_movement
+				}
+			}
+			unlock_national_focus = swe_rural_reconstruction_movement
+		}
+		complete_national_focus	= swe_election_focus
+	}
+}
+
+#선거 중점 일부만 찍고 9월 맞이함 - 파시
+country_event = {
+	id = sweden.5
+	title = sweden.5.t
+	desc = sweden.5.d
+
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date < 1936.09.1
+		date > 1936.08.20
+		has_completed_focus = swe_facism_goverment_prepare
+		NOT = {
+			has_completed_focus = swe_election_focus
+		}
+	}
+
+	option = {
+		name = sweden.5.a
+		clr_country_flag = SWE.preparing_election
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_facism_goverment
+				}
+			}
+			unlock_national_focus = swe_facism_goverment
+		}
+		complete_national_focus	= swe_election_focus
+	}
+}
+
+#선거 중점 일부만 찍고 9월 맞이함 - 공산
+country_event = {
+	id = sweden.6
+	title = sweden.6.t
+	desc = sweden.6.d
+
+	picture = GFX_report_event_generic_riot
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date < 1936.09.1
+		date > 1936.08.20
+		has_completed_focus = swe_communist_goverment_prepare
+		NOT = {
+			has_completed_focus = swe_revolution_focus
+		}
+	}
+
+	option = {
+		name = sweden.6.a
+		clr_country_flag = SWE.preparing_election
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_communist_goverment
+				}
+			}
+			unlock_national_focus = swe_communist_goverment
+		}
+		complete_national_focus	= swe_revolution_focus
+	}
+}
+
+#선거 중점 일부만 찍고 6월 맞이함 - 비동맹
+country_event = {
+	id = sweden.7
+	title = sweden.7.t
+	desc = sweden.7.d
+
+	picture = GFX_report_gustav_v_speech
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date < 1936.06.10
+		date > 1936.05.29
+		has_country_flag = SWE.kingdom_flag
+		NOT = {
+			has_completed_focus = swe_kingdom
+		}
+	}
+
+	option = {
+		name = sweden.7.a
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = swe_kingdom_prepare
+				}
+			}
+			unlock_national_focus = swe_kingdom_prepare
+			add_stability = -0.10
+		}
+		complete_national_focus = swe_kingdom
+		add_stability = -0.10
+	}
+}
+
+#선거 중점 일부만 찍고 9월 맞이함 - 비동맹
+country_event = {
+	id = sweden.8
+	title = sweden.8.t
+	desc = sweden.8.d
+
+	picture = GFX_report_gustav_v_speech
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date < 1936.09.1
+		date > 1936.08.20
+		has_country_flag = SWE.kingdom_flag
+		NOT = {
+			has_completed_focus = swe_stop_election
+		}
+	}
+
+	option = {
+		name = sweden.8.a
+		complete_national_focus	= swe_stop_election
+	}
+}
+
+country_event = { #북유럽 연맹에 가입을 권유
+	id = sweden.9
+	title = sweden.9.t
+	desc = sweden.9.d
+
+	picture = GFX_report_event_hanson_out
+
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.9.a
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_in_faction = yes
+					NOT = {
+						is_in_faction_with = SWE
+					}
+				}
+			}
+			ROOT = {
+				leave_faction = yes
+			}
+		}
+		SWE = {
+			add_to_faction = ROOT
+			country_event = {
+				id = sweden.10 # 북유럽 연맹 가입
+			}
+		}
+	}
+
+	option = {
+		name = sweden.9.b
+		ai_chance = {
+			base = 0
+		}
+		
+		SWE = {
+			country_event = {
+				id = sweden.11 # 북유럽 연맹 거부
+			}
+		}
+	}
+}
+
+country_event = { # 북유럽 연맹 가입
+	id = sweden.10 title = sweden.10.t desc = sweden.10.d 
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.10.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { # 북유럽 연맹 거부
+	id = sweden.11 title = sweden.11.t desc = sweden.11.d 
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.11.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { #합병
+	id = sweden.12 title = sweden.12.t desc = sweden.12.d
+	is_triggered_only = yes
+	picture = GFX_report_event_election_vote
+
+	option = {
+		name = sweden.12.a
+		ai_chance = {
+			base = 50
+		}
+		SWE = {
+			country_event = {
+				id = sweden.13
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+
+	option = {
+		name = sweden.12.b
+		ai_chance = {
+			base = 0
+		}
+		SWE = {
+			country_event = {
+				id = sweden.14
+			}
+		}
+	}
+}
+
+country_event = { #합병
+	id = sweden.13 title = sweden.13.t desc = sweden.13.d
+	is_triggered_only = yes
+
+	picture = GFX_report_event_election_vote
+
+	option = {
+		name = sweden.13.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = {
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+		ROOT = {
+			annex_country = { target = FROM transfer_troops = yes }
+		}
+		if = {
+			limit = {
+				FROM = {
+					tag = FIN
+				}
+			}
+			add_state_claim = 111
+			add_state_claim = 145
+			add_state_claim = 148
+			add_state_claim = 149
+			add_state_claim = 150
+		}
+		if = {
+			limit = {
+				FROM = {
+					tag = DEN
+				}
+			}
+			add_state_claim = 37
+			add_state_claim = 99
+			add_state_claim = 100
+			add_state_claim = 101
+			add_state_claim = 337
+		}
+
+		if = {
+			limit = {
+				FROM = {
+					tag = NOR
+				}
+			}
+			add_state_claim = 110
+			add_state_claim = 142
+			add_state_claim = 143
+			add_state_claim = 144
+		}
+	}
+}
+
+country_event = { #합병 거부
+	id = sweden.14 title = sweden.14.t desc = sweden.14.d
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.14.a
+		ai_chance = {
+			base = 100
+		}
+		ROOT = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+
+	option = {
+		ai_chance = {
+			base = 0
+		}
+		name = sweden.14.b
+	}
+}
+
+country_event = { #삼왕 회의
+	id = sweden.15
+	title = sweden.15.t
+	desc = sweden.15.d
+
+	is_triggered_only = yes
+
+	picture = GFX_report_nord_three_kings
+
+	option = {
+		name = sweden.15.a #합중국 제안
+		ai_chance = {
+			base = 90
+		}
+		every_other_country = {
+			limit = {
+				OR = {
+					original_tag = DEN
+					original_tag = NOR
+				}
+			}
+			country_event = {
+				id = sweden.16
+				random_hours = 4
+			}
+		}
+	}
+	option = {
+		name = sweden.15.b #중립지대 공동선언
+		ai_chance = {
+			base = 10
+		}
+		ROOT = {
+			country_event = {
+				id = sweden.17
+				random_days = 3
+			}
+		}
+	}
+}
+
+country_event = { #합중국 제안
+	id = sweden.16
+	title = sweden.16.t
+	desc = sweden.16.d
+
+	is_triggered_only = yes
+
+	picture = GFX_report_nord_three_kings
+
+	option = {
+		name = sweden.16.a # 선거를 시행한다
+		ai_chance = {
+			base = 100
+		}
+		SWE = {
+			country_event = {
+				id = sweden.13
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = {
+		name = sweden.16.b #거부한다
+		ai_chance = {
+			base = 0
+		}
+
+		SWE = {
+			country_event = {
+				id = sweden.18
+			}
+		}
+	}
+}
+
+country_event = { #중립지대 공동선언
+	id = sweden.17
+	title = sweden.17.t
+	desc = sweden.17.d
+
+	picture = GFX_report_nord_three_kings
+
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.17.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { #선거 거부
+	id = sweden.18
+	title = sweden.18.t
+	desc = sweden.18.d
+
+	picture = GFX_report_nord_three_kings
+
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.18.a
+		ai_chance = {
+			base = 100
+		}
+		ROOT = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+}
+
+country_event = { # 핀란드 보호
+	id = sweden.19
+	title = sweden.19.t
+	desc = sweden.19.d
+
+	picture = GFX_report_event_finnish_letter
+
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.19.a
+		ai_chance = {
+			base = 80
+		}
+		SWE = {
+			country_event = {
+				id = sweden.13
+				random_hours = 10
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+
+	option = {
+		name = sweden.19.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				threat > 4.9
+				factor = 0.1
+			}
+			modifier = {
+				threat > 9.9
+				factor = 0
+			}
+		}
+		SWE = {
+			country_event = {
+				id = sweden.20
+				random_hours = 10
+			}
+		}
+	}
+}
+
+country_event = { # 핀란드 보호 거부
+	id = sweden.20
+	title = sweden.20.t
+	desc = sweden.20.d
+
+	picture = GFX_report_event_finnish_letter
+
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.20.a
+		ai_chance = {
+			base = 100
+		}
+		ROOT = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+}
+
+# 선거 중점 찍음 - 민주
+country_event = {
+	id = sweden.21
+	title = sweden.4.t
+	desc = sweden.4.d
+
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.4.a
+	}
+}
+
+# 선거 중점 찍음 - 파시
+country_event = {
+	id = sweden.22
+	title = sweden.5.t
+	desc = sweden.5.d
+
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.5.a
+	}
+}
+
+# 혁명 중점 찍음 - 공산
+country_event = {
+	id = sweden.23
+	title = sweden.6.t
+	desc = sweden.6.d
+
+	picture = GFX_report_event_generic_riot
+	
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.6.a
+	}
+}
+
+# 정당재구성 - 비동맹
+country_event = {
+	id = sweden.24
+	title = sweden.7.t
+	desc = sweden.7.d
+
+	picture = GFX_report_gustav_v_speech
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.7.a
+	}
+}
+
+# 선거 중단 - 비동맹
+country_event = {
+	id = sweden.25
+	title = sweden.8.t
+	desc = sweden.8.d
+
+	picture = GFX_report_gustav_v_speech
+	is_triggered_only = yes
+
+	option = {
+		name = sweden.8.a
+	}
+}
+
+# 발틱 평의회
+news_event = {
+	id = sweden.2
+	title = sweden.2.t
+	desc = sweden.2.desc
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = sweden.2.a
+		trigger = {
+			OR = {
+				original_tag = DEN
+				original_tag = SWE
+				original_tag = NOR
+				original_tag = FIN
+				original_tag = ICE
+                original_tag = EST
+                original_tag = LIT
+                original_tag = LAT
+			}
+		}
+	}
+	option = {
+		name = sweden.2.b
+		trigger = {
+			OR = {
+				original_tag = GER
+				original_tag = POL
+				original_tag = RUS
+			}
+            NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = sweden.2.c
+		trigger = {
+			OR = {
+				original_tag = GER
+				original_tag = POL
+				original_tag = RUS
+			}
+            has_war_with = FROM
+		}
+	}
+
+    option = {
+		name = sweden.2.d
+		trigger = {
+            NOT = {
+                OR = {
+                    original_tag = DEN
+                    original_tag = SWE
+                    original_tag = NOR
+                    original_tag = FIN
+                    original_tag = ICE
+                    original_tag = EST
+                    original_tag = LIT
+                    original_tag = LAT
+                    original_tag = GER
+                    original_tag = POL
+                    original_tag = RUS
+                }
+            }
+            NOT = { has_war_with = FROM }
+		}
+	}
+    option = {
+		name = sweden.2.e
+		trigger = {
+            NOT = {
+                OR = {
+                    original_tag = DEN
+                    original_tag = SWE
+                    original_tag = NOR
+                    original_tag = FIN
+                    original_tag = ICE
+                    original_tag = EST
+                    original_tag = LIT
+                    original_tag = LAT
+                    original_tag = GER
+                    original_tag = POL
+                    original_tag = RUS
+                }
+            }
+            has_war_with = FROM
+		}
+	}
+}

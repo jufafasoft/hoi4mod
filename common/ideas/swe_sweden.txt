@@ -1,0 +1,513 @@
+ideas = {
+
+	hidden_ideas = {
+		SWE_repit_bounus_idea = {
+			name = SWE_repit_bonus_modifier
+			removal_cost = -1
+
+			picture = SOV_third_five_year_plan_military
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				refit_speed = 0.25
+			}
+		}
+		
+		SWE_destroyer_ship_bonus_idea = {
+			name = SWE_destroyer_ship_bonus_modifier
+			removal_cost = -1
+
+			picture = SOV_third_five_year_plan_military
+				
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			traits = {
+				swe_destroyer_effort_trait
+			}
+		}
+
+		SWE_submarine_bounus_idea = {
+			name = SWE_submarine_bounus_modifier
+			removal_cost = -1
+
+			picture = SOV_third_five_year_plan_military
+				
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			traits = {
+				swe_destroyer_effort_trait
+			}
+		}
+	}
+	country = {
+		swe_king_gustav_v_popular_country_idea = {
+			
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+		
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+			}
+		}
+
+        swe_king_gustav_v_hate_country_idea = {
+			
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+                has_government = democratic
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.001
+				communism_drift = -0.01
+			}
+		}
+
+		swe_king_gustav_v_fascism_country_idea = {
+			
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+                has_government = fascism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = fascism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.15
+				communism_drift = -0.01
+				fascism_drift = 0.01
+			}
+		}
+
+		military_nord_youth_focus = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = fascism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = fascism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+	
+			modifier = {
+				conscription = 0.05
+			}
+		}
+
+		sweden_activism = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = democratic
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+			
+			picture = chi_war_of_resistance
+	
+			modifier = {
+				conscription = 0.04
+				training_time_factor = -0.2
+				war_support_factor = 0.2
+			}
+		}
+
+		sweden_nordic_gold = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = democratic
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_economic_increase
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		sweden_folkhemmet_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = democratic
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = ITA_battaglie_per_la_nascite
+			modifier = {
+				monthly_population = 0.15
+			}
+		}
+
+		sweden_folkhemmet_idea2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = communism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = ITA_battaglie_per_la_nascite
+			modifier = {
+				monthly_population = 0.30
+			}
+		}
+
+		sweden_folkhemmet_idea3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = communism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = ITA_battaglie_per_la_nascite
+			modifier = {
+				monthly_population = 0.50
+			}
+		}
+
+		swe_worker_union_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = communism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = SOV_organize_wreckers
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+
+		swe_balanced_sheet_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = communism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = hol_aloof_neutrality
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		sweden_conscription_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+                has_government = communism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = communism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_reserve_divisions
+			modifier = {
+				conscription = 0.06
+			}
+		}
+
+		sweden_remove_folkhemmet_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = fascism
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = fascism 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.07
+				stability_factor = -0.25
+				production_speed_arms_factory_factor = 0.2
+				production_speed_naval_base_factor = 0.1
+			}
+		}
+
+		sweden_appanage_reduce_idea = { #애퍼니지
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = neutrality
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = neutrality 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = EST_exploit_the_banks
+			modifier = {
+				consumer_goods_factor = -0.03
+				stability_factor = 0.2
+				political_power_gain = 0.20
+			}
+		}
+
+		sweden_increase_tax_idea = { #국방세 증가
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = neutrality
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = neutrality 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = gre_schachtplan
+			modifier = {
+				consumer_goods_factor = -0.07
+				stability_factor = -0.2
+				political_power_cost = 0.25
+			}
+		}
+
+		king_of_folkhemmet_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                has_government = neutrality
+				NOT = {
+					any_other_country = {
+						original_tag = SWE
+						has_government = neutrality 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = 0.08
+				training_time_factor = -0.2
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		SWE_ns = { 
+			removal_cost = -1
+
+			picture = SOV_third_five_year_plan_military
+				
+			allowed = {
+				original_tag = SWE
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
+				carrier = {
+					instant = yes
+					build_cost_ic = -0.1
+					armor_value = -0.1
+				}
+			}
+		}
+	}
+}

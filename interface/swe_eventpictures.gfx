@@ -1,0 +1,16 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_report_event_hanson_out"
+		texturefile = "gfx/event_pictures/news_event_sweden_hanson_001.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_gustav_v_speech"
+		texturefile = "gfx/event_pictures/event_gustav_v_001.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_nord_three_kings"
+		texturefile = "gfx/event_pictures/event_nord_three_kings_001.dds"
+	}
+}
